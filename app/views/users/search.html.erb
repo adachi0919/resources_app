@@ -19,6 +19,7 @@
         <td><%= user.name %></td>
         <td><%= user.age %></td>
         <td><%= link_to "削除", "/users/#{user.id}", method: :delete, data: {confirm: "削除しますか？"} %></td>
+        <td><%= link_to "編集", "/users/#{user.id}/edit", method: :get %></td>
       </tr>
     <% end %>
   </tbody>
