@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/users/search', to: 'users#search'
   get 'users/new', to: 'users#new'
   post 'users/create', to: 'users#create'
+  delete '/users/:id', to: 'users#destroy'
 end
