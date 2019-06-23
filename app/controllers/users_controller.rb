@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     User.create(user_params)
+    redirect_to :action => "search"
   end
 
   def search
@@ -13,9 +14,20 @@ class UsersController < ApplicationController
     @users = user_search.execute
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to :action => "search"
+  end
+
   def destroy
     user = User.find(params[:id])
     user.delete
+    redirect_to :action => "search"
   end
 
   private
